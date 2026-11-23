@@ -31,16 +31,26 @@ import { SITE_TITLE, SITE_DESCRIPTION, REPO_URL } from '../consts';
 					</div>
 
 					<h1 class="hero-title">
-						Your RTX 5090 workstation,<br />
+						<span class="hero-prefix">Your</span>
+						<span
+							class="split-flap-board"
+							data-split-flap
+							data-words='["GPU RIG","HOMELAB","CLOUD COMPUTER","RASPBERRY PI","WORKSTATION"]'
+							aria-live="polite"
+							aria-label="GPU Rig, HomeLab, Cloud Computer, Raspberry Pi, Workstation"
+						>
+							<span class="sr-only">GPU Rig, HomeLab, Cloud Computer, Raspberry Pi</span>
+							<span class="flap-row" aria-hidden="true"></span>
+						</span>
 						<span class="hero-highlight">cast as a shadow desktop</span><br />
 						in any browser.
 					</h1>
 
 					<p class="hero-sub">
 						<strong>kaage</strong> is a remote web-based desktop OS built on <strong>NixOS</strong> and
-						served by a <strong>Rust</strong> daemon. Perch over your home-office powerhouse from a
-						laptop or phone over Tailscale—with a clean <strong>BeOS-inspired</strong> interface,
-						zero SSH gymnastics, and zero JavaScript.
+						served by a <strong>Rust</strong> daemon. Perch over your GPU rig, homelab, cloud computer, or
+						Raspberry Pi from a laptop or phone over Tailscale—with a clean <strong>BeOS-inspired</strong>
+						interface, zero SSH gymnastics, and zero JavaScript.
 					</p>
 
 					<div class="hero-actions">
@@ -101,9 +111,10 @@ import { SITE_TITLE, SITE_DESCRIPTION, REPO_URL } from '../consts';
 						<div>
 							<h2 class="section-heading">A crow on your rig. A shadow in your browser.</h2>
 							<p>
-								Modern home-office workstations pack absurd compute—like an <strong>RTX 5090</strong>
-								running local models, containers, and builds—yet using them remotely still means juggling
-								raw SSH sessions, port forwards, and brittle tmux windows.
+								Whether it’s a <strong>GPU rig</strong>, a <strong>homelab</strong>, a
+								<strong>cloud computer</strong>, or a <strong>Raspberry Pi</strong> running local models,
+								containers, and builds, using Linux hosts remotely still means juggling raw SSH sessions,
+								port forwards, and brittle tmux windows.
 							</p>
 							<p>
 								<strong>kaage</strong> turns a NixOS host into a single-user, remote web-based desktop OS
@@ -191,9 +202,9 @@ import { SITE_TITLE, SITE_DESCRIPTION, REPO_URL } from '../consts';
 						</div>
 						<div class="flow-arrow" aria-hidden="true">── Verified ──▶</div>
 						<div class="flow-node">
-							<div class="flow-label">HOME WORKSTATION</div>
+							<div class="flow-label">YOUR HOST</div>
 							<div class="flow-title">kaaged (Rust)</div>
-							<div class="flow-sub">RTX 5090 · NixOS</div>
+							<div class="flow-sub">GPU Rig · Homelab · Pi · Cloud</div>
 						</div>
 					</div>
 
@@ -236,9 +247,9 @@ import { SITE_TITLE, SITE_DESCRIPTION, REPO_URL } from '../consts';
 						<div>
 							<h2 class="section-heading">Native AI from silicon to cloud</h2>
 							<p>
-								Your RTX 5090 already runs local AI workloads like <strong>ComfyUI</strong> and
-								<strong>Sloth</strong> right on the workstation. <strong>kaage</strong> brings AI directly
-								into the OS layer instead of bolting it on as an afterthought.
+								Your GPU rig or homelab can run local AI workloads like <strong>ComfyUI</strong> and
+								<strong>Unsloth</strong> right on the host. <strong>kaage</strong> brings AI directly into
+								the OS layer instead of bolting it on as an afterthought.
 							</p>
 
 							<div class="be-inset ai-callout">
@@ -300,13 +311,13 @@ import { SITE_TITLE, SITE_DESCRIPTION, REPO_URL } from '../consts';
 							<div class="be-inset llm-panel" data-llm-panel="local">
 								<h3>Local Model on the Same Machine</h3>
 								<p>
-									Run directly against the RTX 5090 sitting underneath <code>kaaged</code>. Zero latency,
-									zero data leaving your desk, sharing hardware smoothly with <strong>ComfyUI</strong> and
-									<strong>Sloth</strong>.
+									Run directly against the local GPU or CPU sitting underneath <code>kaaged</code>. Zero
+									latency, zero data leaving your host, sharing hardware smoothly with
+									<strong>ComfyUI</strong> and <strong>Unsloth</strong>.
 								</p>
 								<pre><code>endpoint = "http://127.0.0.1:8080/v1"
-mode     = "local-rtx5090"
-scope    = ["nixos-ops", "kaage-shell", "comfyui", "sloth"]</code></pre>
+mode     = "local-host"
+scope    = ["nixos-ops", "kaage-shell", "comfyui", "unsloth"]</code></pre>
 							</div>
 
 							<div class="be-inset llm-panel" data-llm-panel="tailscale" hidden>
@@ -379,9 +390,9 @@ bridge    = "browser-session + voice-passthrough"</code></pre>
 
 # 2. App State → Cloudflare R2 / S3 (continuous interval)
 ~/appdata/
-├── fubar/                 # App data for "Fubar"
+├── foobar/                # App data for "Foobar"
 ├── comfyui/               # Models, workflows, outputs
-├── sloth/                 # Fine-tuning checkpoints
+├── unsloth/               # Fine-tuning checkpoints
 └── tracker/               # Smart file index &amp; metadata</code></pre>
 						</div>
 					</div>
@@ -460,6 +471,7 @@ bridge    = "browser-session + voice-passthrough"</code></pre>
 		<Footer />
 
 		<script>
+			// Interactive LLM hookup tabs
 			const buttons = document.querySelectorAll<HTMLButtonElement>('[data-llm-tab]');
 			const panels = document.querySelectorAll<HTMLElement>('[data-llm-panel]');
 
@@ -476,6 +488,129 @@ bridge    = "browser-session + voice-passthrough"</code></pre>
 					});
 				});
 			});
+
+			// Mechanical Split-Flap Board
+			const board = document.querySelector<HTMLElement>('[data-split-flap]');
+			if (board) {
+				const row = board.querySelector<HTMLElement>('.flap-row');
+				const rawWords = board.dataset.words;
+				const words: string[] = rawWords ? JSON.parse(rawWords) : ['GPU RIG'];
+				const cols = Math.max(...words.map((w) => w.length));
+				const drum = ' ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+				const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+				const padWord = (word: string) => word.toUpperCase().padEnd(cols, ' ');
+
+				interface FlapCell {
+					el: HTMLSpanElement;
+					topStatic: HTMLSpanElement;
+					bottomStatic: HTMLSpanElement;
+					topLeaf: HTMLSpanElement;
+					bottomLeaf: HTMLSpanElement;
+					current: string;
+					timers: number[];
+				}
+
+				const cells: FlapCell[] = [];
+				const initial = padWord(words[0]);
+
+				if (row) {
+					for (let i = 0; i < cols; i++) {
+						const ch = initial[i];
+						const el = document.createElement('span');
+						el.className = 'flap-cell';
+						el.innerHTML =
+							`<span class="flap-half flap-top"><span>${ch}</span></span>` +
+							`<span class="flap-half flap-bottom"><span>${ch}</span></span>` +
+							`<span class="flap-leaf flap-leaf-top"><span>${ch}</span></span>` +
+							`<span class="flap-leaf flap-leaf-bottom"><span>${ch}</span></span>` +
+							`<span class="flap-seam"></span>`;
+
+						const topStatic = el.querySelector<HTMLSpanElement>('.flap-top span')!;
+						const bottomStatic = el.querySelector<HTMLSpanElement>('.flap-bottom span')!;
+						const topLeaf = el.querySelector<HTMLSpanElement>('.flap-leaf-top span')!;
+						const bottomLeaf = el.querySelector<HTMLSpanElement>('.flap-leaf-bottom span')!;
+
+						row.appendChild(el);
+						cells.push({ el, topStatic, bottomStatic, topLeaf, bottomLeaf, current: ch, timers: [] });
+					}
+				}
+
+				const flipOnce = (cell: FlapCell, nextChar: string, durationMs: number) => {
+					if (cell.current === nextChar) return;
+					if (reducedMotion) {
+						cell.topStatic.textContent = nextChar;
+						cell.bottomStatic.textContent = nextChar;
+						cell.topLeaf.textContent = nextChar;
+						cell.bottomLeaf.textContent = nextChar;
+						cell.current = nextChar;
+						return;
+					}
+
+					const prevChar = cell.current;
+					cell.topStatic.textContent = nextChar;
+					cell.bottomStatic.textContent = prevChar;
+					cell.topLeaf.textContent = prevChar;
+					cell.bottomLeaf.textContent = nextChar;
+
+					cell.el.style.setProperty('--flap-ms', `${durationMs}ms`);
+					cell.el.classList.remove('is-flipping');
+					// Force reflow to restart CSS keyframe animation
+					void cell.el.offsetWidth;
+					cell.el.classList.add('is-flipping');
+
+					cell.current = nextChar;
+					window.setTimeout(() => {
+						cell.bottomStatic.textContent = nextChar;
+						cell.topLeaf.textContent = nextChar;
+					}, durationMs);
+				};
+
+				const transitionCell = (cell: FlapCell, targetChar: string, staggerMs: number) => {
+					cell.timers.forEach((id) => window.clearTimeout(id));
+					cell.timers = [];
+					if (cell.current === targetChar) return;
+
+					if (reducedMotion) {
+						flipOnce(cell, targetChar, 0);
+						return;
+					}
+
+					// Build 2 quick intermediate mechanical ticks before landing on targetChar
+					const steps: string[] = [];
+					const startIdx = Math.max(0, drum.indexOf(cell.current));
+					const ticks = 2;
+					for (let t = 1; t <= ticks; t++) {
+						steps.push(drum[(startIdx + t * 5) % drum.length]);
+					}
+					steps.push(targetChar);
+
+					const stepMs = 95;
+					steps.forEach((ch, idx) => {
+						const id = window.setTimeout(() => {
+							flipOnce(cell, ch, stepMs);
+						}, staggerMs + idx * (stepMs + 10));
+						cell.timers.push(id);
+					});
+				};
+
+				let wordIndex = 0;
+				const showWord = (nextIndex: number) => {
+					wordIndex = nextIndex % words.length;
+					const padded = padWord(words[wordIndex]);
+					for (let i = 0; i < cols; i++) {
+						transitionCell(cells[i], padded[i], i * 26);
+					}
+				};
+
+				let intervalId = window.setInterval(() => showWord(wordIndex + 1), 2900);
+
+				board.addEventListener('click', () => {
+					window.clearInterval(intervalId);
+					showWord(wordIndex + 1);
+					intervalId = window.setInterval(() => showWord(wordIndex + 1), 2900);
+				});
+			}
 		</script>
 	</body>
 </html>
