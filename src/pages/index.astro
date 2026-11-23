@@ -47,10 +47,10 @@ import { SITE_TITLE, SITE_DESCRIPTION, REPO_URL } from '../consts';
 					</h1>
 
 					<p class="hero-sub">
-						<strong>kaage</strong> is a remote web-based desktop OS built on <strong>NixOS</strong> and
+						<strong>kaage</strong> is a late-90s workstation-inspired webtop built on <strong>NixOS</strong> and
 						served by a <strong>Rust</strong> daemon. Perch over your GPU rig, homelab, cloud computer, or
-						Raspberry Pi from a laptop or phone over Tailscale—with a clean <strong>BeOS-inspired</strong>
-						interface, zero SSH gymnastics, and zero JavaScript.
+						Raspberry Pi from a laptop or phone over Tailscale—with <strong>sliding yellow title tabs</strong>,
+						<strong>3D beveled chrome</strong>, stack-and-tile windows, zero SSH gymnastics, and zero JavaScript.
 					</p>
 
 					<div class="hero-actions">
@@ -64,11 +64,11 @@ import { SITE_TITLE, SITE_DESCRIPTION, REPO_URL } from '../consts';
 						<span class="be-pill"><span class="status-dot"></span>100% Rust + WASM</span>
 						<span class="be-pill">0 lines JS / TS</span>
 						<span class="be-pill">NixOS + Tailscale Serve</span>
-						<span class="be-pill">Mobile-ready BeOS UI</span>
+						<span class="be-pill">Mobile-ready Webtop</span>
 					</div>
 				</div>
 
-				<!-- Live Screenshot inside a BeOS Stack & Tile Window -->
+				<!-- Live Screenshot inside a Stack & Tile Window -->
 				<div class="be-window hero-window">
 					<div class="be-tab-row">
 						<div class="be-tab">
@@ -87,7 +87,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, REPO_URL } from '../consts';
 					<div class="be-frame hero-frame">
 						<img
 							src="/images/kaage-screenshot.png"
-							alt="kaage BeOS-inspired webtop running in Firefox over Tailscale, showing Tracker, Systemd Services, an interactive shell, and the crow-and-shadow wallpaper"
+							alt="kaage tactile retro-beveled browser desktop running in Firefox over Tailscale, showing stackable tabbed windows, Tracker, Systemd Services, an interactive shell, a live top-right Deskbar, and the crow-and-shadow wallpaper"
 							class="hero-screenshot"
 						/>
 						<div class="screenshot-caption">
@@ -117,10 +117,10 @@ import { SITE_TITLE, SITE_DESCRIPTION, REPO_URL } from '../consts';
 								port forwards, and brittle tmux windows.
 							</p>
 							<p>
-								<strong>kaage</strong> turns a NixOS host into a single-user, remote web-based desktop OS
-								served directly by a lightweight <strong>Rust daemon (<code>kaaged</code>)</strong>. Open a
-								browser tab on your laptop, tablet, or phone and your workstation is right there—clean,
-								tactile, and inspired by the golden era of <strong>BeOS</strong>.
+								<strong>kaage</strong> turns a NixOS host into a single-user, tactile, retro-beveled browser
+								desktop served directly by a lightweight <strong>Rust daemon (<code>kaaged</code>)</strong>.
+								Open a browser tab on your laptop, tablet, or phone and your machine is right there—built
+								around <strong>stackable tabbed windows</strong> and a live top-right <strong>Deskbar</strong>.
 							</p>
 
 							<div class="pun-box be-inset">
@@ -161,11 +161,11 @@ import { SITE_TITLE, SITE_DESCRIPTION, REPO_URL } from '../consts';
 							<div class="be-inset primitive-card">
 								<div class="primitive-header">
 									<span class="primitive-icon">▤</span>
-									<h3>BeOS Aesthetic, Mobile Ready</h3>
+									<h3>Classic Workstation Chrome, Mobile Ready</h3>
 								</div>
 								<p>
-									Clean yellow title tabs, crisp beveled windows, zero visual bloat—and already running
-									smoothly on mobile browsers when you need to check a job on the go.
+									Inspired by classic 1990s personal workstations—featuring crisp 1px bevels, sliding yellow
+									tabs, and zero-bloat responsiveness—already running smoothly on mobile browsers.
 								</p>
 							</div>
 						</div>
@@ -272,7 +272,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, REPO_URL } from '../consts';
 							</div>
 						</div>
 
-						<!-- Interactive BeOS Tabbed Panel for the 3 LLM Hookup Options -->
+						<!-- Interactive Tabbed Panel for the 3 LLM Hookup Options -->
 						<div class="llm-tabs-shell">
 							<div class="llm-tabs-label">Three flexible LLM hookup paths:</div>
 							<div class="be-tab-row" role="tablist" aria-label="LLM hookup options">
@@ -434,7 +434,8 @@ bridge    = "browser-session + voice-passthrough"</code></pre>
 							<h3>Tracker (Finder-Inspired)</h3>
 							<p>
 								Already ships <strong>Tracker</strong>, a fast file explorer inspired by macOS Finder and
-								BeOS Tracker—built for smart file organization with auto-recognition and categorization.
+								classic 1990s workstation file managers—built for smart file organization with
+								auto-recognition and categorization.
 							</p>
 						</div>
 

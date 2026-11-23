@@ -10,7 +10,7 @@ import { SITE_TITLE, REPO_URL } from '../consts';
 	<head>
 		<BaseHead
 			title={`About — ${SITE_TITLE}`}
-			description="The story and philosophy behind kaage (ಕಾಗೆ / 影), a BeOS-inspired NixOS remote web desktop."
+			description="The story and philosophy behind kaage (ಕಾಗೆ / 影), a late-90s workstation-inspired NixOS remote web desktop."
 		/>
 	</head>
 	<body>
@@ -39,8 +39,9 @@ import { SITE_TITLE, REPO_URL } from '../consts';
 					<p>
 						Everything is built in <strong>Rust</strong> (including the WASM frontend—no TypeScript or
 						JavaScript), runs on an <strong>LLM-generated NixOS</strong> host, ships with the
-						Finder/BeOS-inspired <strong>Tracker</strong> file explorer, and keeps backups dead simple by
-						syncing <code>~/appdata/&lt;appname&gt;</code> continuously to Cloudflare R2 or S3.
+						Finder-inspired <strong>Tracker</strong> file explorer and classic 1990s retro-beveled chrome,
+						and keeps backups dead simple by syncing <code>~/appdata/&lt;appname&gt;</code> continuously to
+						Cloudflare R2 or S3.
 					</p>
 					<p>
 						<a href={REPO_URL} target="_blank" rel="noopener noreferrer" class="be-btn be-btn-primary">

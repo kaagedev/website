@@ -1,6 +1,6 @@
 /*
  * kaage (ಕಾಗೆ / 影) Design System
- * BeOS Stack & Tile chrome set over a moonlit twilight desktop.
+ * Late-90s workstation Stack & Tile chrome set over a moonlit twilight desktop.
  */
 
 :root {
@@ -12,7 +12,7 @@
 	--crow-ink: #091321;
 	--shadow-ink: #111c2b;
 
-	/* BeOS Classic Chrome & Signature Golden-Yellow Tab */
+	/* Retro-Beveled Chrome & Signature Sliding Yellow Tab */
 	--be-yellow: #ffcb00;
 	--be-yellow-hi: #ffe57a;
 	--be-yellow-lo: #cf9b00;
@@ -137,7 +137,7 @@ img {
 }
 
 /* =========================================================
- * BeOS Stack & Tile Window Primitives
+ * Stack & Tile Retro-Beveled Window Primitives
  * ========================================================= */
 
 .be-window {
