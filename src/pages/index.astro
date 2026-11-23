@@ -62,9 +62,9 @@ import { SITE_TITLE, SITE_DESCRIPTION, REPO_URL } from '../consts';
 
 					<div class="hero-pills">
 						<span class="be-pill"><span class="status-dot"></span>100% Rust + WASM</span>
-						<span class="be-pill">0 lines JS / TS</span>
-						<span class="be-pill">NixOS + Tailscale Serve</span>
-						<span class="be-pill">Mobile-ready Webtop</span>
+						<span class="be-pill">BSP Tiling + Stack &amp; Tile</span>
+						<span class="be-pill">Vitals · Tracker · ⌘K HUD</span>
+						<span class="be-pill">Obsidian Amber &amp; Retro Themes</span>
 					</div>
 				</div>
 
@@ -173,6 +173,95 @@ import { SITE_TITLE, SITE_DESCRIPTION, REPO_URL } from '../consts';
 				</div>
 			</section>
 
+			<!-- SECTION 1.5: MISSION-CONTROL COCKPIT & SHIPPED APPS -->
+			<section id="cockpit" class="be-window section-anchor">
+				<div class="be-tab-row">
+					<div class="be-tab">
+						<span class="be-close-box"></span>
+						<span>[UX] Mission-Control Cockpit &amp; Shipped Apps</span>
+					</div>
+				</div>
+				<div class="be-frame">
+					<h2 class="section-heading">Built like a mission-control workstation—already shipping</h2>
+					<p class="section-lead">
+						Everything runs natively inside the Rust/WASM canvas with bundled
+						<strong>IBM Plex Sans &amp; Mono</strong> typography, zero third-party web bloat, and live
+						WebSocket telemetry from <code>kaaged</code>.
+					</p>
+
+					<div class="cockpit-grid">
+						<div class="be-inset cockpit-card">
+							<div class="stack-kicker">WINDOW MANAGER</div>
+							<h3>Hybrid BSP Tiling &amp; Workspaces</h3>
+							<p>
+								Dynamic recursive <strong>BSP tiling</strong> by default, paired with drag-to-stack tabs and
+								drag-to-split detachment. Switch across <strong>4 named workspaces</strong>
+								(<code>1: Ops</code>, <code>2: AI</code>, <code>3: Files</code>, <code>4: Logs</code>) with
+								<code>Alt+1..4</code>, focus panes with <code>Alt+H/J/K/L</code>, pin floating
+								<code>FLT/PIP</code> overlays, or collapse cleanly on mobile (&lt;768px).
+							</p>
+						</div>
+
+						<div class="be-inset cockpit-card">
+							<div class="stack-kicker">COMMAND HUD &amp; DESKBAR</div>
+							<h3>Global <code>⌘K</code> Palette &amp; Live Strip</h3>
+							<p>
+								Hit <code>Ctrl+K</code> / <code>Cmd+K</code> to fuzzy-launch apps, switch workspaces,
+								restart/tail systemd services, or open container shells. The 28px Deskbar surfaces live
+								<strong>CPU/RAM/GPU sparkbars</strong>, active port badges, Tailscale node identity, a
+								3-mode clock, and reversible <strong>Undo toasts</strong>.
+							</p>
+						</div>
+
+						<div class="be-inset cockpit-card">
+							<div class="stack-kicker">TELEMETRY COCKPIT</div>
+							<h3>Kaage Vitals (1s Live + 24h History)</h3>
+							<p>
+								Synchronized time-travel charts with a shared crosshair scrubber and drag-to-zoom, backed
+								by a 1h 1s ring buffer and 24h persisted rollups. Tracks per-core Pulse bars,
+								<strong>GPU + per-process VRAM</strong>, <strong>Kernel PSI</strong>,
+								<code>journalctl -k</code> OOM/NVMe/Xid alerts, physical vs <code>tailscale0</code> NICs,
+								and live <code>TERM</code>/<code>KILL</code>/<code>renice</code> controls.
+							</p>
+						</div>
+
+						<div class="be-inset cockpit-card">
+							<div class="stack-kicker">FILE EXPLORER</div>
+							<h3>Tracker &amp; Rich File Previews</h3>
+							<p>
+								Dual-pane commander (<code>F5</code> Copy, <code>F6</code> Move, <code>Tab</code> switch)
+								with Holding Shelf, Safe Trash + Undo, Git branch/dirty badges, and systemd unit ownership.
+								Built-in rich previews for <strong>Markdown</strong> (inline edit/save),
+								<strong>Images/SVG</strong>, <strong>ZIP/tar archives</strong>,
+								<strong>JSON/Code/CSV</strong>, and <strong>GGUF / SafeTensors</strong> model headers.
+							</p>
+						</div>
+
+						<div class="be-inset cockpit-card">
+							<div class="stack-kicker">THEMES &amp; SETTINGS</div>
+							<h3>Obsidian &amp; Amber + Retro Switcher</h3>
+							<p>
+								Ships with a dark neo-brutalist <strong>Obsidian &amp; Amber</strong> theme (dot-grid
+								canvas, warm amber active tabs) plus a 1-click toggle to classic retro-beveled light
+								chrome. Customize fonts, UI/terminal sizes (15pt/16pt defaults), and colors live in
+								<code>kaage-settings</code>.
+							</p>
+						</div>
+
+						<div class="be-inset cockpit-card">
+							<div class="stack-kicker">TERMINAL ERGONOMICS</div>
+							<h3>Browser-Safe Vim &amp; <code>kaage-help</code></h3>
+							<p>
+								Focus-locked <code>Esc</code>, <code>Tab</code>, <code>Shift+Tab</code>, and
+								<code>Alt+Arrows</code> inside PTY terminals, plus <code>Ctrl+[</code> escape support that
+								never exits Safari, Edge, or Firefox fullscreen. Full shortcut &amp; API reference built
+								right into <code>kaage-help</code>.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
 			<!-- SECTION 2: ACCESS & SECURITY -->
 			<section id="security" class="be-window section-anchor">
 				<div class="be-tab-row">
@@ -210,10 +299,11 @@ import { SITE_TITLE, SITE_DESCRIPTION, REPO_URL } from '../consts';
 
 					<div class="feature-row-3">
 						<div class="be-inset">
-							<h3>HTTPS by Domain Name</h3>
+							<h3>Tailscale Services Screen</h3>
 							<p>
-								Served over HTTPS via <strong>Tailscale Serve</strong> and reachable by your clean
-								tailnet domain name—no exposed public ports, no VPN config files to babysit.
+								Inspect every local port and exposed service in a dedicated <strong>Tailscale Services</strong>
+								view—with <strong>clickable Tailscale HTTPS URLs</strong> and one-click
+								<code>tailscale serve</code> register &amp; unregister right from the UI.
 							</p>
 						</div>
 						<div class="be-inset">
@@ -431,20 +521,20 @@ bridge    = "browser-session + voice-passthrough"</code></pre>
 
 						<div class="be-inset stack-card">
 							<div class="stack-kicker">FILE EXPLORER</div>
-							<h3>Tracker (Finder-Inspired)</h3>
+							<h3>Dual-Pane Tracker + Rich Previews</h3>
 							<p>
-								Already ships <strong>Tracker</strong>, a fast file explorer inspired by macOS Finder and
-								classic 1990s workstation file managers—built for smart file organization with
-								auto-recognition and categorization.
+								Already ships <strong>Tracker</strong> with dual-pane commander ops, Safe Trash + Undo,
+								Git/systemd badges, and built-in previews for Markdown, images, ZIP/tar, JSON/CSV, and
+								<strong>GGUF / SafeTensors</strong> weights.
 							</p>
 						</div>
 
 						<div class="be-inset stack-card">
 							<div class="stack-kicker">NETWORKING</div>
-							<h3>Local Services via Tailscale Serve</h3>
+							<h3>One-Click Tailscale Services</h3>
 							<p>
-								HTTP services running on the same workstation are automatically surfaced and exposed over
-								HTTPS via <strong>Tailscale Serve</strong>, right from your desktop.
+								Discover HTTP services on the host, open clickable <code>*.ts.net</code> HTTPS URLs, and
+								register or unregister <strong>Tailscale Serve</strong> routes straight from the webtop.
 							</p>
 						</div>
 					</div>
@@ -827,6 +917,24 @@ bridge    = "browser-session + voice-passthrough"</code></pre>
 		flex-shrink: 0;
 	}
 
+	/* COCKPIT GRID */
+	.cockpit-grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 0.9rem;
+	}
+
+	.cockpit-card h3 {
+		font-size: 1.02rem;
+		margin-bottom: 0.35rem;
+	}
+
+	.cockpit-card p {
+		margin: 0;
+		font-size: 0.9rem;
+		color: #2b3440;
+	}
+
 	/* TAILSCALE FLOW */
 	.flow-diagram {
 		display: flex;
@@ -1044,6 +1152,9 @@ bridge    = "browser-session + voice-passthrough"</code></pre>
 		.section-grid-2 {
 			grid-template-columns: 1fr;
 		}
+		.cockpit-grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
 		.feature-row-3 {
 			grid-template-columns: 1fr;
 		}
@@ -1053,6 +1164,7 @@ bridge    = "browser-session + voice-passthrough"</code></pre>
 	}
 
 	@media (max-width: 600px) {
+		.cockpit-grid,
 		.stack-grid {
 			grid-template-columns: 1fr;
 		}
