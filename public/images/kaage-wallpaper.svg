@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="linear-gradient-1" x1="960" y1="0" x2="960" y2="648" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2b5580"/>
+      <stop offset="0.55" stop-color="#376796"/>
+      <stop offset="0.88" stop-color="#5582ae"/>
+      <stop offset="1" stop-color="#6d97be"/>
+    </linearGradient>
+    <filter id="filter-1" filterUnits="userSpaceOnUse" x="-59" y="313.305" width="1518" height="393.695" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceGraphic" stdDeviation="19"/></filter>
+    <filter id="filter-2" filterUnits="userSpaceOnUse" x="176" y="456.665" width="1048" height="235.335" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceGraphic" stdDeviation="14"/></filter>
+    <linearGradient id="linear-gradient-2" x1="960" y1="648" x2="960" y2="1080" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#547ea8"/>
+      <stop offset="0.25" stop-color="#2a527d"/>
+      <stop offset="0.65" stop-color="#18375b"/>
+      <stop offset="1" stop-color="#0e223d"/>
+    </linearGradient>
+    <radialGradient id="radial-gradient-1" cx="1336" cy="360" r="260" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffcb00" stop-opacity="0.45"/>
+      <stop offset="0.5" stop-color="#e5a92a" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#376796" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient-2" cx="1336" cy="360" r="146" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffe680"/>
+      <stop offset="0.62" stop-color="#f6bc41"/>
+      <stop offset="1" stop-color="#d79227"/>
+    </radialGradient>
+  </defs>
+  <title>kaage-wallpaper</title>
+  <g id="Layer_1" data-name="Layer 1">
+    <rect id="Sky" x="0" y="0" width="1920" height="648" fill="url(#linear-gradient-1)"/>
+    <g filter="url(#filter-1)">
+      <path id="Mist_Left" data-name="Mist Left" d="M0 380 C180 350 340 415 540 450 C710 480 860 465 1020 510 C1150 545 1260 610 1400 648 L0 648 Z" fill="#8fb3d4" opacity="0.32"/>
+    </g>
+    <g filter="url(#filter-2)">
+      <path id="Mist_Horizon" data-name="Mist Horizon" d="M260 515 C430 485 590 505 760 548 C910 585 1040 595 1180 648 L220 648 Z" fill="#a9c7e2" opacity="0.26"/>
+    </g>
+    <rect id="Water" x="0" y="648" width="1920" height="432" fill="url(#linear-gradient-2)"/>
+    <circle id="Moon_Glow" data-name="Moon Glow" cx="1336" cy="360" r="260" fill="url(#radial-gradient-1)"/>
+    <circle id="Moon_Core" data-name="Moon Core" cx="1336" cy="360" r="146" fill="url(#radial-gradient-2)"/>
+    <circle id="Moon_Ring_1" data-name="Moon Ring 1" cx="1336" cy="360" r="156" fill="none" stroke="#ffe282" stroke-width="1.6" stroke-miterlimit="10" opacity="0.55"/>
+    <circle id="Moon_Ring_2" data-name="Moon Ring 2" cx="1336" cy="360" r="166" fill="none" stroke="#ffe282" stroke-width="1.5" stroke-miterlimit="10" opacity="0.46"/>
+    <circle id="Moon_Ring_3" data-name="Moon Ring 3" cx="1336" cy="360" r="176" fill="none" stroke="#ffe282" stroke-width="1.4" stroke-miterlimit="10" opacity="0.38"/>
+    <circle id="Moon_Ring_4" data-name="Moon Ring 4" cx="1336" cy="360" r="186" fill="none" stroke="#ffe282" stroke-width="1.3" stroke-miterlimit="10" opacity="0.31"/>
+    <circle id="Moon_Ring_5" data-name="Moon Ring 5" cx="1336" cy="360" r="196" fill="none" stroke="#ffe282" stroke-width="1.2" stroke-miterlimit="10" opacity="0.24"/>
+    <circle id="Moon_Ring_6" data-name="Moon Ring 6" cx="1336" cy="360" r="206" fill="none" stroke="#ffe282" stroke-width="1.1" stroke-miterlimit="10" opacity="0.18"/>
+    <circle id="Moon_Ring_7" data-name="Moon Ring 7" cx="1336" cy="360" r="216" fill="none" stroke="#ffe282" stroke-miterlimit="10" opacity="0.12"/>
+    <path id="Ripple_1" data-name="Ripple 1" d="M1202.5 656 L1467.5 656 C1468.881 656 1470 657.119 1470 658.5 L1470 658.5 C1470 659.881 1468.881 661 1467.5 661 L1202.5 661 C1201.119 661 1200 659.881 1200 658.5 L1200 658.5 C1200 657.119 1201.119 656 1202.5 656 Z" fill="#f7c654" opacity="0.58"/>
+    <path id="Ripple_2" data-name="Ripple 2" d="M1226.5 671 L1446.5 671 C1447.881 671 1449 672.119 1449 673.5 L1449 673.5 C1449 674.881 1447.881 676 1446.5 676 L1226.5 676 C1225.119 676 1224 674.881 1224 673.5 L1224 673.5 C1224 672.119 1225.119 671 1226.5 671 Z" fill="#f7c654" opacity="0.52"/>
+    <path id="Ripple_3" data-name="Ripple 3" d="M1246 688 L1427 688 C1428.105 688 1429 688.895 1429 690 L1429 690 C1429 691.105 1428.105 692 1427 692 L1246 692 C1244.895 692 1244 691.105 1244 690 L1244 690 C1244 688.895 1244.895 688 1246 688 Z" fill="#f7c654" opacity="0.44"/>
+    <path id="Ripple_4" data-name="Ripple 4" d="M1212 708 L1448 708 C1449.105 708 1450 708.895 1450 710 L1450 710 C1450 711.105 1449.105 712 1448 712 L1212 712 C1210.895 712 1210 711.105 1210 710 L1210 710 C1210 708.895 1210.895 708 1212 708 Z" fill="#f7c654" opacity="0.38"/>
+    <path id="Ripple_5" data-name="Ripple 5" d="M1185.75 738 L1477.25 738 C1478.216 738 1479 738.784 1479 739.75 L1479 739.75 C1479 740.716 1478.216 741.5 1477.25 741.5 L1185.75 741.5 C1184.784 741.5 1184 740.716 1184 739.75 L1184 739.75 C1184 738.784 1184.784 738 1185.75 738 Z" fill="#f7c654" opacity="0.34"/>
+    <path id="Ripple_6" data-name="Ripple 6" d="M1206.75 766 L1463.25 766 C1464.216 766 1465 766.784 1465 767.75 L1465 767.75 C1465 768.716 1464.216 769.5 1463.25 769.5 L1206.75 769.5 C1205.784 769.5 1205 768.716 1205 767.75 L1205 767.75 C1205 766.784 1205.784 766 1206.75 766 Z" fill="#f7c654" opacity="0.3"/>
+    <path id="Ripple_7" data-name="Ripple 7" d="M1169.5 796 L1496.5 796 C1497.328 796 1498 796.672 1498 797.5 L1498 797.5 C1498 798.328 1497.328 799 1496.5 799 L1169.5 799 C1168.672 799 1168 798.328 1168 797.5 L1168 797.5 C1168 796.672 1168.672 796 1169.5 796 Z" fill="#f7c654" opacity="0.26"/>
+    <path id="Ripple_8" data-name="Ripple 8" d="M1127.5 832 L1504.5 832 C1505.328 832 1506 832.672 1506 833.5 L1506 833.5 C1506 834.328 1505.328 835 1504.5 835 L1127.5 835 C1126.672 835 1126 834.328 1126 833.5 L1126 833.5 C1126 832.672 1126.672 832 1127.5 832 Z" fill="#f7c654" opacity="0.22"/>
+    <path id="Ripple_9" data-name="Ripple 9" d="M1193.2 866 L1460.8 866 C1461.463 866 1462 866.537 1462 867.2 L1462 867.3 C1462 867.963 1461.463 868.5 1460.8 868.5 L1193.2 868.5 C1192.537 868.5 1192 867.963 1192 867.3 L1192 867.2 C1192 866.537 1192.537 866 1193.2 866 Z" fill="#f7c654" opacity="0.18"/>
+    <path id="Ripple_10" data-name="Ripple 10" d="M1225.2 902 L1412.8 902 C1413.463 902 1414 902.537 1414 903.2 L1414 903.3 C1414 903.963 1413.463 904.5 1412.8 904.5 L1225.2 904.5 C1224.537 904.5 1224 903.963 1224 903.3 L1224 903.2 C1224 902.537 1224.537 902 1225.2 902 Z" fill="#f7c654" opacity="0.14"/>
+    <path id="Ripple_11" data-name="Ripple 11" d="M1245 936 L1383 936 C1383.552 936 1384 936.448 1384 937 L1384 937 C1384 937.552 1383.552 938 1383 938 L1245 938 C1244.448 938 1244 937.552 1244 937 L1244 937 C1244 936.448 1244.448 936 1245 936 Z" fill="#f7c654" opacity="0.1"/>
+    <polygon id="Branch_Reflection" data-name="Branch Reflection" points="1920,714 1265,714 1218,684 1002,684 1002,691 1213,691 1257,723 1920,732" fill="#081628" opacity="0.38"/>
+    <path id="Crow_Shadow_Reflection" data-name="Crow Shadow Reflection" d="M1295 724 L1318 756 L1344 756 L1358 724 L1346 724 L1336 749 L1326 749 L1310 724 Z M1350 756 C1385 752 1418 730 1474 714 L1542 684 L1528 708 L1554 688 L1510 740 C1488 776 1465 814 1434 850 C1406 884 1386 922 1378 960 C1372 992 1350 1012 1320 1010 C1290 1008 1266 984 1264 950 C1262 918 1266 882 1280 848 C1295 812 1320 778 1350 756 Z" fill="#061121" opacity="0.5"/>
+    <path id="Pine_Fans_Reflection" data-name="Pine Fans Reflection" d="M1044 686 L1014 720 M1044 686 L1026 726 M1044 686 L1040 730 M1044 686 L1054 729 M1044 686 L1066 724 M1044 686 L1076 716 M1142 715 L1112 749 M1142 715 L1124 755 M1142 715 L1138 759 M1142 715 L1152 758 M1142 715 L1164 753 M1142 715 L1174 745" fill="none" stroke="#071424" stroke-width="2.2" stroke-miterlimit="10" opacity="0.3"/>
+    <polygon id="Pine_Branch_Main" data-name="Pine Branch Main" points="1920,554 1682,554 1630,502 1882,502 1882,494 1612,494 1666,554 1266,554 1222,608 1002,608 1002,616 1228,616 1272,567 1920,572" fill="#091321"/>
+    <path id="Pine_Needle_Fans" data-name="Pine Needle Fans" d="M1048 610 L1012 574 M1048 610 L1024 566 M1048 610 L1038 560 M1048 610 L1052 559 M1048 610 L1066 564 M1048 610 L1078 573 M1048 610 L1086 584 M1098 610 L1066 576 M1098 610 L1078 568 M1098 610 L1092 562 M1098 610 L1106 562 M1098 610 L1120 568 M1098 610 L1132 578 M1140 562 L1106 526 M1140 562 L1118 518 M1140 562 L1132 512 M1140 562 L1146 512 M1140 562 L1160 518 M1140 562 L1172 528 M1192 562 L1160 528 M1192 562 L1174 520 M1192 562 L1188 515 M1192 562 L1202 515 M1192 562 L1216 522 M1192 562 L1226 532 M1622 496 L1584 456 M1622 496 L1598 446 M1622 496 L1614 440 M1622 496 L1630 440 M1622 496 L1646 446 M1622 496 L1658 458 M1692 496 L1650 450 M1692 496 L1666 438 M1692 496 L1684 432 M1692 496 L1700 432 M1692 496 L1716 438 M1692 496 L1732 450 M1766 496 L1732 456 M1766 496 L1746 448 M1766 496 L1760 442 M1766 496 L1774 442 M1766 496 L1788 448 M1766 496 L1800 458 M1834 496 L1804 462 M1834 496 L1816 454 M1834 496 L1830 450 M1834 496 L1844 450 M1834 496 L1856 456 M1834 496 L1866 466" fill="none" stroke="#091321" stroke-width="2.6" stroke-linecap="round" stroke-miterlimit="10"/>
+    <path id="Crow_Legs" data-name="Crow Legs" d="M1344 506 L1326 554 L1308 558 L1308 564 L1336 560 L1356 512 Z M1384 510 L1388 554 L1372 558 L1372 564 L1402 560 L1398 514 Z" fill="#091321"/>
+    <path id="Crow_Silhouette" data-name="Crow Silhouette" d="M1396 294 C1388 282 1368 272 1346 272 C1318 272 1296 286 1284 310 C1274 328 1270 344 1264 358 C1258 374 1256 392 1262 412 C1272 444 1296 476 1334 504 C1358 520 1386 528 1418 528 L1458 548 L1528 614 L1538 606 L1510 564 L1554 600 L1560 590 L1492 518 L1532 544 L1538 534 L1476 472 C1466 452 1450 424 1428 398 C1410 378 1394 360 1378 344 C1382 332 1388 322 1398 318 L1424 316 L1438 308 L1422 298 L1404 294 Z" fill="#091321"/>
+    <path id="Crow_Feather_Highlights" data-name="Crow Feather Highlights" d="M1326 364 C1356 376 1386 402 1418 438 M1340 398 C1368 412 1398 438 1434 474 M1362 436 C1390 450 1420 474 1456 508 M1386 474 C1410 486 1436 506 1466 532 M1300 326 L1288 344 L1298 340 L1288 360" fill="none" stroke="#2f527a" stroke-width="3.2" stroke-linecap="round" stroke-miterlimit="10" opacity="0.72"/>
+    <circle id="Crow_Eye" data-name="Crow Eye" cx="1352.5" cy="294.5" r="5.5" fill="#ffcb00"/>
+    <text transform="matrix(1 0 0 1 1696 920)" x="0" y="0" xml:space="preserve" font-family="&apos;Noto Sans Kannada&apos;, sans-serif" font-size="74" fill="#ebd9a8" text-anchor="middle"><tspan x="0" y="0">ಕಾಗೆ 影</tspan></text>
+    <text transform="matrix(1 0 0 1 1696 994)" x="0" y="0" xml:space="preserve" font-family="&apos;DejaVu Sans&apos;, sans-serif" font-size="44" fill="#e2cfa0" text-anchor="middle"><tspan x="0" y="0">k ā g e</tspan></text>
+  </g>
+</svg>

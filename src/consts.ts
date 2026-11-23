@@ -1,5 +1,6 @@
-// Place any global data in this file.
-// You can import this data from anywhere in your site by using the `import` keyword.
+// Global metadata for kaage (ಕಾಗೆ / 影)
 
-export const SITE_TITLE = "Astro Blog";
-export const SITE_DESCRIPTION = "Welcome to my website!";
+export const SITE_TITLE = "kaage — ಕಾಗೆ / 影";
+export const SITE_DESCRIPTION =
+	"A BeOS-inspired remote web desktop OS built on NixOS and Rust/WASM. Harness your home RTX 5090 workstation from any browser over Tailscale—no SSH required.";
+export const REPO_URL = "https://github.com/btbytes/kaage";

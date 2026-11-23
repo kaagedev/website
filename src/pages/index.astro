@@ -2,7 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { SITE_TITLE, SITE_DESCRIPTION, REPO_URL } from '../consts';
 ---
 
 <!doctype html>
@@ -12,39 +12,917 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	</head>
 	<body>
 		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+
+		<!-- Atmospheric Crow & Moon backdrop -->
+		<div class="wallpaper-backdrop" aria-hidden="true">
+			<img src="/images/kaage-wallpaper.svg" alt="" />
+		</div>
+
+		<main class="desktop-stage">
+			<!-- HERO -->
+			<section class="hero">
+				<div class="hero-copy">
+					<div class="etymology-badge">
+						<span class="badge-glyph">ಕಾಗೆ</span>
+						<span class="badge-meaning">crow (Kannada)</span>
+						<span class="badge-sep">/</span>
+						<span class="badge-glyph">影</span>
+						<span class="badge-meaning">shadow (Japanese)</span>
+					</div>
+
+					<h1 class="hero-title">
+						Your RTX 5090 workstation,<br />
+						<span class="hero-highlight">cast as a shadow desktop</span><br />
+						in any browser.
+					</h1>
+
+					<p class="hero-sub">
+						<strong>kaage</strong> is a remote web-based desktop OS built on <strong>NixOS</strong> and
+						served by a <strong>Rust</strong> daemon. Perch over your home-office powerhouse from a
+						laptop or phone over Tailscale—with a clean <strong>BeOS-inspired</strong> interface,
+						zero SSH gymnastics, and zero JavaScript.
+					</p>
+
+					<div class="hero-actions">
+						<a href={REPO_URL} target="_blank" rel="noopener noreferrer" class="be-btn be-btn-primary">
+							Explore btbytes/kaage →
+						</a>
+						<a href="#what" class="be-btn">Read the Architecture</a>
+					</div>
+
+					<div class="hero-pills">
+						<span class="be-pill"><span class="status-dot"></span>100% Rust + WASM</span>
+						<span class="be-pill">0 lines JS / TS</span>
+						<span class="be-pill">NixOS + Tailscale Serve</span>
+						<span class="be-pill">Mobile-ready BeOS UI</span>
+					</div>
+				</div>
+
+				<!-- Live Screenshot inside a BeOS Stack & Tile Window -->
+				<div class="be-window hero-window">
+					<div class="be-tab-row">
+						<div class="be-tab">
+							<span class="be-close-box"></span>
+							<span>kaage — aihole.ts.net:9090</span>
+						</div>
+						<div class="be-tab be-tab-inactive">
+							<span class="be-close-box"></span>
+							<span>Tracker</span>
+						</div>
+						<div class="be-tab be-tab-inactive">
+							<span class="be-close-box"></span>
+							<span>Terminal — shell</span>
+						</div>
+					</div>
+					<div class="be-frame hero-frame">
+						<img
+							src="/images/kaage-screenshot.png"
+							alt="kaage BeOS-inspired webtop running in Firefox over Tailscale, showing Tracker, Systemd Services, an interactive shell, and the crow-and-shadow wallpaper"
+							class="hero-screenshot"
+						/>
+						<div class="screenshot-caption">
+							<span>Live webtop on NixOS 26.11 · Systemd + Terminal + Tracker</span>
+							<span class="caption-mono">wasm32-unknown-unknown</span>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- SECTION 1: WHAT KAAGE IS -->
+			<section id="what" class="be-window section-anchor">
+				<div class="be-tab-row">
+					<div class="be-tab">
+						<span class="be-close-box"></span>
+						<span>[OS] What kaage Is</span>
+					</div>
+				</div>
+				<div class="be-frame">
+					<div class="section-grid-2">
+						<div>
+							<h2 class="section-heading">A crow on your rig. A shadow in your browser.</h2>
+							<p>
+								Modern home-office workstations pack absurd compute—like an <strong>RTX 5090</strong>
+								running local models, containers, and builds—yet using them remotely still means juggling
+								raw SSH sessions, port forwards, and brittle tmux windows.
+							</p>
+							<p>
+								<strong>kaage</strong> turns a NixOS host into a single-user, remote web-based desktop OS
+								served directly by a lightweight <strong>Rust daemon (<code>kaaged</code>)</strong>. Open a
+								browser tab on your laptop, tablet, or phone and your workstation is right there—clean,
+								tactile, and inspired by the golden era of <strong>BeOS</strong>.
+							</p>
+
+							<div class="pun-box be-inset">
+								<div class="pun-title">Why “kaage”?</div>
+								<p class="pun-copy">
+									In Kannada, <strong>ಕಾಗೆ (<em>kāge</em>)</strong> means <em>crow</em>—sharp-eyed,
+									resourceful, perched high watching over your system and sorting your files. In Japanese,
+									<strong>影 (<em>kage</em>)</strong> means <em>shadow</em>—the remote projection of your
+									home machine that follows you everywhere.
+								</p>
+							</div>
+						</div>
+
+						<div class="primitives-col">
+							<div class="be-inset primitive-card">
+								<div class="primitive-header">
+									<span class="primitive-icon">&gt;_</span>
+									<h3>Primitive 1: Terminal</h3>
+								</div>
+								<p>
+									Full interactive PTY terminals right inside the webtop—no external SSH client or raw
+									terminal sessions needed. Spawn shells, tail journals, and manage systemd services
+									side-by-side.
+								</p>
+							</div>
+
+							<div class="be-inset primitive-card">
+								<div class="primitive-header">
+									<span class="primitive-icon">◈</span>
+									<h3>Primitive 2: Browser</h3>
+								</div>
+								<p>
+									The browser is both the viewport and a first-class productivity surface—exposing local
+									web apps, AI interfaces, and dashboards seamlessly from the same machine.
+								</p>
+							</div>
+
+							<div class="be-inset primitive-card">
+								<div class="primitive-header">
+									<span class="primitive-icon">▤</span>
+									<h3>BeOS Aesthetic, Mobile Ready</h3>
+								</div>
+								<p>
+									Clean yellow title tabs, crisp beveled windows, zero visual bloat—and already running
+									smoothly on mobile browsers when you need to check a job on the go.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- SECTION 2: ACCESS & SECURITY -->
+			<section id="security" class="be-window section-anchor">
+				<div class="be-tab-row">
+					<div class="be-tab">
+						<span class="be-close-box"></span>
+						<span>[TS] Access &amp; Security</span>
+					</div>
+				</div>
+				<div class="be-frame">
+					<h2 class="section-heading">Zero-friction HTTPS over Tailscale Serve</h2>
+					<p class="section-lead">
+						Built with a <strong>single-user focus</strong> for now, so security stays simple, auditable,
+						and airtight from any device you own.
+					</p>
+
+					<div class="flow-diagram be-inset" role="region" aria-label="Tailscale authentication flow">
+						<div class="flow-node">
+							<div class="flow-label">YOUR DEVICE</div>
+							<div class="flow-title">macOS Laptop / Phone</div>
+							<div class="flow-sub">Logged into Tailscale</div>
+						</div>
+						<div class="flow-arrow" aria-hidden="true">── HTTPS ──▶</div>
+						<div class="flow-node flow-node-accent">
+							<div class="flow-label">TAILSCALE SERVE</div>
+							<div class="flow-title">host.tailnet.ts.net</div>
+							<div class="flow-sub">Auto-injects <code>Tailscale-User-Login</code></div>
+						</div>
+						<div class="flow-arrow" aria-hidden="true">── Verified ──▶</div>
+						<div class="flow-node">
+							<div class="flow-label">HOME WORKSTATION</div>
+							<div class="flow-title">kaaged (Rust)</div>
+							<div class="flow-sub">RTX 5090 · NixOS</div>
+						</div>
+					</div>
+
+					<div class="feature-row-3">
+						<div class="be-inset">
+							<h3>HTTPS by Domain Name</h3>
+							<p>
+								Served over HTTPS via <strong>Tailscale Serve</strong> and reachable by your clean
+								tailnet domain name—no exposed public ports, no VPN config files to babysit.
+							</p>
+						</div>
+						<div class="be-inset">
+							<h3>Automatic macOS Auth</h3>
+							<p>
+								When you’re signed into Tailscale on your macOS laptop, Tailscale automatically injects
+								identity headers. Open your bookmark and you’re straight onto your desktop.
+							</p>
+						</div>
+						<div class="be-inset">
+							<h3>Secure From Any Device</h3>
+							<p>
+								Single-user architecture keeps the attack surface tiny while still giving you secure
+								authenticated login from any device on your tailnet.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- SECTION 3: LLM & AI INTEGRATION -->
+			<section id="ai" class="be-window section-anchor">
+				<div class="be-tab-row">
+					<div class="be-tab">
+						<span class="be-close-box"></span>
+						<span>[AI] LLM &amp; AI Integration</span>
+					</div>
+				</div>
+				<div class="be-frame">
+					<div class="section-grid-2">
+						<div>
+							<h2 class="section-heading">Native AI from silicon to cloud</h2>
+							<p>
+								Your RTX 5090 already runs local AI workloads like <strong>ComfyUI</strong> and
+								<strong>Sloth</strong> right on the workstation. <strong>kaage</strong> brings AI directly
+								into the OS layer instead of bolting it on as an afterthought.
+							</p>
+
+							<div class="be-inset ai-callout">
+								<h3>Embedded NixOS + kaage Text LLM <span class="roadmap-tag">PLANNED</span></h3>
+								<p>
+									Embed a small, capable text LLM specifically trained on <strong>NixOS concepts</strong>
+									and <strong>kaage itself</strong>—eliminating cloud round-trips for system-level
+									queries, service debugging, and desktop actions, with a clearly defined minimum model
+									size threshold for reliability.
+								</p>
+							</div>
+
+							<div class="be-inset ai-callout">
+								<h3>Browser Bridge &amp; Voice Passthrough <span class="roadmap-tag">CONCEPT</span></h3>
+								<p>
+									Share your live desktop and browser session directly with a cloud agent via the
+									<strong>Browser Bridge</strong>—paired with planned <strong>voice passthrough</strong>
+									from your laptop microphone straight to the remote machine.
+								</p>
+							</div>
+						</div>
+
+						<!-- Interactive BeOS Tabbed Panel for the 3 LLM Hookup Options -->
+						<div class="llm-tabs-shell">
+							<div class="llm-tabs-label">Three flexible LLM hookup paths:</div>
+							<div class="be-tab-row" role="tablist" aria-label="LLM hookup options">
+								<button
+									type="button"
+									role="tab"
+									aria-selected="true"
+									class="be-tab llm-tab-btn"
+									data-llm-tab="local"
+								>
+									<span class="be-close-box"></span>
+									<span>1. Local GPU</span>
+								</button>
+								<button
+									type="button"
+									role="tab"
+									aria-selected="false"
+									class="be-tab be-tab-inactive llm-tab-btn"
+									data-llm-tab="tailscale"
+								>
+									<span class="be-close-box"></span>
+									<span>2. Tailscale API</span>
+								</button>
+								<button
+									type="button"
+									role="tab"
+									aria-selected="false"
+									class="be-tab be-tab-inactive llm-tab-btn"
+									data-llm-tab="cloud"
+								>
+									<span class="be-close-box"></span>
+									<span>3. Cloud SaaS</span>
+								</button>
+							</div>
+
+							<div class="be-inset llm-panel" data-llm-panel="local">
+								<h3>Local Model on the Same Machine</h3>
+								<p>
+									Run directly against the RTX 5090 sitting underneath <code>kaaged</code>. Zero latency,
+									zero data leaving your desk, sharing hardware smoothly with <strong>ComfyUI</strong> and
+									<strong>Sloth</strong>.
+								</p>
+								<pre><code>endpoint = "http://127.0.0.1:8080/v1"
+mode     = "local-rtx5090"
+scope    = ["nixos-ops", "kaage-shell", "comfyui", "sloth"]</code></pre>
+							</div>
+
+							<div class="be-inset llm-panel" data-llm-panel="tailscale" hidden>
+								<h3>LLM API Exposed Over Tailscale</h3>
+								<p>
+									Point kaage at any inference box on your private Tailscale mesh—keeping traffic
+									WireGuard-encrypted while offloading heavy models to another node on your tailnet.
+								</p>
+								<pre><code>endpoint = "https://inference.tailnet.ts.net/v1"
+mode     = "tailscale-mesh"
+auth     = "tailscale-identity"</code></pre>
+							</div>
+
+							<div class="be-inset llm-panel" data-llm-panel="cloud" hidden>
+								<h3>Cloud SaaS Providers</h3>
+								<p>
+									Plug into frontier models from <strong>OpenAI</strong>, <strong>Anthropic</strong>, or
+									<strong>Google</strong> whenever you want maximum reasoning horsepower or cloud-agent
+									collaboration over the Browser Bridge.
+								</p>
+								<pre><code>providers = ["openai", "anthropic", "google"]
+mode      = "cloud-saas"
+bridge    = "browser-session + voice-passthrough"</code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- SECTION 4: STORAGE & BACKUP -->
+			<section id="storage" class="be-window section-anchor">
+				<div class="be-tab-row">
+					<div class="be-tab">
+						<span class="be-close-box"></span>
+						<span>[R2] Storage &amp; Backup</span>
+					</div>
+				</div>
+				<div class="be-frame">
+					<div class="section-grid-2">
+						<div>
+							<h2 class="section-heading">Cattle OS. Precious <code>~/appdata</code>.</h2>
+							<p>
+								<strong>NixOS itself is never backed up.</strong> The entire operating system is
+								declaratively reconstructed from dotfiles synced to GitHub (or any Git remote).
+							</p>
+							<p>
+								Instead, kaage enforces one clean, predictable convention for persistent state:
+								<strong>every app stores its data under <code>~/appdata/&lt;appname&gt;</code></strong>.
+								That single directory is continuously backed up on a configurable interval to cheap object
+								storage like <strong>Cloudflare R2</strong> or <strong>Amazon S3</strong>.
+							</p>
+
+							<div class="backup-badges">
+								<span class="be-pill">Cloudflare R2 / S3</span>
+								<span class="be-pill">Git-synced NixOS dotfiles</span>
+								<span class="be-pill">Configurable continuous interval</span>
+							</div>
+						</div>
+
+						<div class="be-inset tree-card">
+							<div class="tree-header">
+								<span>Storage Split</span>
+								<span class="tree-badge">declarative + continuous</span>
+							</div>
+							<pre><code># 1. OS &amp; Config → Git (not backed up to object storage)
+~/dotfiles/
+├── flake.nix              # Reconstructs entire NixOS host
+├── configuration.nix      # LLM-generated (Gemini)
+└── home.nix
+
+# 2. App State → Cloudflare R2 / S3 (continuous interval)
+~/appdata/
+├── fubar/                 # App data for "Fubar"
+├── comfyui/               # Models, workflows, outputs
+├── sloth/                 # Fine-tuning checkpoints
+└── tracker/               # Smart file index &amp; metadata</code></pre>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- SECTION 5: TECH STACK & CURRENT STATE -->
+			<section id="stack" class="be-window section-anchor">
+				<div class="be-tab-row">
+					<div class="be-tab">
+						<span class="be-close-box"></span>
+						<span>[&gt;_] Tech Stack &amp; Current State</span>
+					</div>
+				</div>
+				<div class="be-frame">
+					<h2 class="section-heading">Pure Rust. Zero JS. Already shipping.</h2>
+
+					<div class="stack-grid">
+						<div class="be-inset stack-card">
+							<div class="stack-kicker">LANGUAGE &amp; UI</div>
+							<h3>100% Rust + WASM</h3>
+							<p>
+								The entire stack—daemon, wire protocol, and web UI—is written in <strong>Rust</strong> and
+								compiled to <strong>WebAssembly</strong>. Zero TypeScript. Zero JavaScript.
+							</p>
+						</div>
+
+						<div class="be-inset stack-card">
+							<div class="stack-kicker">SYSTEM CONFIG</div>
+							<h3>100% LLM-Generated NixOS</h3>
+							<p>
+								The NixOS configuration is generated entirely by <strong>Gemini models</strong>—no
+								hand-written NixOS code required to maintain or evolve the host.
+							</p>
+						</div>
+
+						<div class="be-inset stack-card">
+							<div class="stack-kicker">FILE EXPLORER</div>
+							<h3>Tracker (Finder-Inspired)</h3>
+							<p>
+								Already ships <strong>Tracker</strong>, a fast file explorer inspired by macOS Finder and
+								BeOS Tracker—built for smart file organization with auto-recognition and categorization.
+							</p>
+						</div>
+
+						<div class="be-inset stack-card">
+							<div class="stack-kicker">NETWORKING</div>
+							<h3>Local Services via Tailscale Serve</h3>
+							<p>
+								HTTP services running on the same workstation are automatically surfaced and exposed over
+								HTTPS via <strong>Tailscale Serve</strong>, right from your desktop.
+							</p>
+						</div>
+					</div>
+
+					<div class="nix-preview">
+						<div class="nix-preview-bar">
+							<span>flake / configuration.nix — declarative deployment</span>
+							<span>services.kaage</span>
+						</div>
+						<pre><code>services.kaage = &#123;
+  enable = true;
+  user = my.username;
+  port = 9090;
+  allowedUser = "you@domain.com"; # Verified via Tailscale-User-Login
+  tailscaleServe = &#123;
+    enable = true;
+    httpsPort = 9090;
+  &#125;;
+&#125;;</code></pre>
+					</div>
+				</div>
+			</section>
 		</main>
+
 		<Footer />
+
+		<script>
+			const buttons = document.querySelectorAll<HTMLButtonElement>('[data-llm-tab]');
+			const panels = document.querySelectorAll<HTMLElement>('[data-llm-panel]');
+
+			buttons.forEach((btn) => {
+				btn.addEventListener('click', () => {
+					const target = btn.dataset.llmTab;
+					buttons.forEach((b) => {
+						const active = b.dataset.llmTab === target;
+						b.setAttribute('aria-selected', String(active));
+						b.classList.toggle('be-tab-inactive', !active);
+					});
+					panels.forEach((p) => {
+						p.hidden = p.dataset.llmPanel !== target;
+					});
+				});
+			});
+		</script>
 	</body>
 </html>
+
+<style>
+	.wallpaper-backdrop {
+		position: fixed;
+		inset: 0;
+		z-index: 0;
+		pointer-events: none;
+		overflow: hidden;
+		opacity: 0.32;
+	}
+
+	.wallpaper-backdrop img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: right top;
+	}
+
+	.desktop-stage {
+		position: relative;
+		z-index: 1;
+		max-width: 1180px;
+		margin: 0 auto;
+		padding: 2rem 1rem 1rem;
+	}
+
+	.section-anchor {
+		scroll-margin-top: 4.5rem;
+	}
+
+	/* HERO */
+	.hero {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+		gap: 2rem;
+		align-items: center;
+		margin-bottom: 2.5rem;
+	}
+
+	.etymology-badge {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.45rem;
+		flex-wrap: wrap;
+		background: rgba(9, 19, 33, 0.78);
+		border: 1px solid rgba(255, 203, 0, 0.65);
+		color: #f8fafc;
+		padding: 0.32rem 0.72rem;
+		font-size: 0.84rem;
+		margin-bottom: 1rem;
+	}
+
+	.badge-glyph {
+		font-family: var(--font-kannada);
+		font-weight: 700;
+		color: var(--be-yellow);
+		font-size: 1rem;
+	}
+
+	.badge-meaning {
+		color: #d6e4f3;
+	}
+
+	.badge-sep {
+		color: #7c96b3;
+	}
+
+	.hero-title {
+		font-size: clamp(2rem, 3.6vw, 3.05rem);
+		line-height: 1.12;
+		color: #f8fafc;
+		text-shadow: 0 2px 12px rgba(9, 19, 33, 0.65);
+		margin-bottom: 1rem;
+	}
+
+	.hero-highlight {
+		color: var(--be-yellow);
+	}
+
+	.hero-sub {
+		color: #dce8f5;
+		font-size: 1.05rem;
+		line-height: 1.65;
+		max-width: 54ch;
+		margin: 0 0 1.4rem;
+	}
+
+	.hero-sub strong {
+		color: #ffffff;
+	}
+
+	.hero-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		margin-bottom: 1.25rem;
+	}
+
+	.hero-pills {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.45rem;
+	}
+
+	.hero-window {
+		margin-top: 0;
+	}
+
+	.hero-frame {
+		padding: 0.55rem;
+	}
+
+	.hero-screenshot {
+		width: 100%;
+		border: 1px solid #4a5568;
+	}
+
+	.screenshot-caption {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 0.5rem;
+		flex-wrap: wrap;
+		padding: 0.45rem 0.25rem 0.1rem;
+		font-size: 0.78rem;
+		color: var(--be-muted);
+	}
+
+	.caption-mono {
+		font-family: var(--font-mono);
+		color: var(--crow-ink);
+		font-weight: 700;
+	}
+
+	/* SECTIONS */
+	.section-heading {
+		font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+		margin-bottom: 0.75rem;
+	}
+
+	.section-lead {
+		margin-top: 0;
+		margin-bottom: 1.15rem;
+		color: #2f3a47;
+		max-width: 68ch;
+	}
+
+	.section-grid-2 {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1.35rem;
+		align-items: start;
+	}
+
+	.pun-box {
+		margin-top: 1.1rem;
+		border-left: 4px solid var(--be-yellow-lo);
+		background: #fffbeb;
+	}
+
+	.pun-title {
+		font-weight: 700;
+		font-size: 0.9rem;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+		color: #7c5800;
+		margin-bottom: 0.3rem;
+	}
+
+	.pun-copy {
+		margin: 0;
+		font-size: 0.94rem;
+	}
+
+	.primitives-col {
+		display: flex;
+		flex-direction: column;
+		gap: 0.85rem;
+	}
+
+	.primitive-card p {
+		margin: 0.35rem 0 0;
+		font-size: 0.94rem;
+		color: #2b3440;
+	}
+
+	.primitive-header {
+		display: flex;
+		align-items: center;
+		gap: 0.55rem;
+	}
+
+	.primitive-header h3 {
+		margin: 0;
+		font-size: 1.05rem;
+	}
+
+	.primitive-icon {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 28px;
+		height: 28px;
+		background: var(--crow-ink);
+		color: var(--be-yellow);
+		font-family: var(--font-mono);
+		font-weight: 700;
+		font-size: 0.82rem;
+		border: 1px solid var(--be-border);
+		flex-shrink: 0;
+	}
+
+	/* TAILSCALE FLOW */
+	.flow-diagram {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.75rem;
+		flex-wrap: wrap;
+		margin-bottom: 1.15rem;
+		background: #eef2f6;
+	}
+
+	.flow-node {
+		flex: 1 1 200px;
+		background: #ffffff;
+		border: 1.5px solid var(--be-border);
+		padding: 0.75rem 0.9rem;
+		box-shadow: 2px 2px 0 rgba(9, 19, 33, 0.14);
+	}
+
+	.flow-node-accent {
+		background: #fff9db;
+		border-color: #a67c00;
+	}
+
+	.flow-label {
+		font-family: var(--font-mono);
+		font-size: 0.7rem;
+		font-weight: 700;
+		color: #2b5580;
+		letter-spacing: 0.05em;
+	}
+
+	.flow-title {
+		font-weight: 700;
+		font-size: 1rem;
+		color: var(--crow-ink);
+		margin: 0.15rem 0;
+	}
+
+	.flow-sub {
+		font-size: 0.84rem;
+		color: var(--be-muted);
+	}
+
+	.flow-arrow {
+		font-family: var(--font-mono);
+		font-size: 0.78rem;
+		font-weight: 700;
+		color: #2b5580;
+		white-space: nowrap;
+	}
+
+	.feature-row-3 {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 0.9rem;
+	}
+
+	.feature-row-3 h3 {
+		font-size: 1rem;
+		margin-bottom: 0.35rem;
+	}
+
+	.feature-row-3 p {
+		margin: 0;
+		font-size: 0.92rem;
+		color: #2b3440;
+	}
+
+	/* AI SECTION */
+	.ai-callout {
+		margin-top: 0.85rem;
+	}
+
+	.ai-callout h3 {
+		font-size: 1rem;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		flex-wrap: wrap;
+	}
+
+	.ai-callout p {
+		margin: 0.35rem 0 0;
+		font-size: 0.93rem;
+		color: #2b3440;
+	}
+
+	.roadmap-tag {
+		font-family: var(--font-mono);
+		font-size: 0.68rem;
+		padding: 0.1rem 0.42rem;
+		background: var(--crow-ink);
+		color: var(--be-yellow);
+		letter-spacing: 0.04em;
+	}
+
+	.llm-tabs-label {
+		font-size: 0.85rem;
+		font-weight: 700;
+		color: var(--be-muted);
+		margin-bottom: 0.45rem;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+	}
+
+	.llm-tab-btn {
+		font-family: var(--font-sans);
+		cursor: pointer;
+	}
+
+	.llm-panel {
+		position: relative;
+		z-index: 1;
+	}
+
+	.llm-panel h3 {
+		font-size: 1.05rem;
+		margin-bottom: 0.4rem;
+	}
+
+	.llm-panel p {
+		margin: 0 0 0.85rem;
+		font-size: 0.93rem;
+		color: #2b3440;
+	}
+
+	/* STORAGE */
+	.backup-badges {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.45rem;
+		margin-top: 1rem;
+	}
+
+	.tree-card {
+		padding: 0;
+		overflow: hidden;
+	}
+
+	.tree-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0.55rem 0.9rem;
+		background: #e2e5ea;
+		border-bottom: 1px solid #8a8f98;
+		font-weight: 700;
+		font-size: 0.86rem;
+	}
+
+	.tree-badge {
+		font-family: var(--font-mono);
+		font-size: 0.74rem;
+		color: #2b5580;
+	}
+
+	.tree-card pre {
+		border: none;
+	}
+
+	/* STACK */
+	.stack-grid {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: 0.9rem;
+		margin-bottom: 1.2rem;
+	}
+
+	.stack-kicker {
+		font-family: var(--font-mono);
+		font-size: 0.7rem;
+		font-weight: 700;
+		color: #2b5580;
+		letter-spacing: 0.05em;
+		margin-bottom: 0.25rem;
+	}
+
+	.stack-card h3 {
+		font-size: 1.02rem;
+		margin-bottom: 0.35rem;
+	}
+
+	.stack-card p {
+		margin: 0;
+		font-size: 0.9rem;
+		color: #2b3440;
+	}
+
+	.nix-preview {
+		border: 1.5px solid var(--be-border);
+	}
+
+	.nix-preview-bar {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0.45rem 0.85rem;
+		background: #1c2736;
+		color: #cbd5e1;
+		font-family: var(--font-mono);
+		font-size: 0.78rem;
+		border-bottom: 1px solid #334155;
+	}
+
+	.nix-preview pre {
+		border: none;
+	}
+
+	/* RESPONSIVE */
+	@media (max-width: 980px) {
+		.hero {
+			grid-template-columns: 1fr;
+		}
+		.section-grid-2 {
+			grid-template-columns: 1fr;
+		}
+		.feature-row-3 {
+			grid-template-columns: 1fr;
+		}
+		.stack-grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+
+	@media (max-width: 600px) {
+		.stack-grid {
+			grid-template-columns: 1fr;
+		}
+		.flow-arrow {
+			width: 100%;
+			text-align: center;
+		}
+	}
+</style>
